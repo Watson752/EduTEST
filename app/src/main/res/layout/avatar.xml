@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#F8F8F8">
+    android:background="@drawable/home_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,22 +14,33 @@
         android:layout_gravity="center_horizontal">
 
         <!-- Larger and perfectly round Avatar Image -->
+
         <ImageView
-            android:id="@+id/avatar_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:radius = "75dp"
-            android:src="@drawable/avatar_placeholder" <!-- Placeholder image -->
-        android:contentDescription="User Avatar"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/avatar_circle_background"
-        android:scaleType="centerCrop" <!-- Ensures the image fits perfectly inside the circle -->
-        android:padding="8dp"
-        android:clickable="true"
-        android:focusable="true" />
+            android:id="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars"
+            android:layout_width="155dp"
+            android:layout_height="150dp"
+            android:background="@drawable/rounded_corners"
+            android:contentDescription="User Avatar"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar" />
 
         <!-- User's Name -->
+
+
+        <Button
+            android:id="@+id/pickImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Pick Image"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
@@ -55,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Intelligence"
+            android:text="Reading"
             android:textSize="18sp"
             android:textColor="#333333"
             android:layout_gravity="center_horizontal"
@@ -76,7 +88,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Attention"
+            android:text="Understanding"
             android:textSize="18sp"
             android:textColor="#333333"
             android:layout_gravity="center_horizontal"
@@ -97,7 +109,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Personality"
+            android:text="Comprehension"
             android:textSize="18sp"
             android:textColor="#333333"
             android:layout_gravity="center_horizontal"
@@ -118,11 +130,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Self-Discipline"
-            android:textSize="18sp"
-            android:textColor="#333333"
             android:layout_gravity="center_horizontal"
-            android:paddingBottom="8dp"/>
+            android:paddingBottom="8dp"
+            android:text="Total"
+            android:textColor="#333333"
+            android:textSize="18sp" />
 
         <ProgressBar
             android:id="@+id/self_discipline_progress"
